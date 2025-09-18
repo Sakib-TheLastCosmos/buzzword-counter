@@ -28,8 +28,6 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/thumbnail.jpeg", // your thumbnail image
-        width: 1200,
-        height: 630,
         alt: "Buzzword Counter Thumbnail",
       },
     ],
