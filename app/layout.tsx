@@ -20,6 +20,27 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Buzzword Counter",
   description: "Track and analyze buzzwords in presentations and lectures",
+  openGraph: {
+    title: "Buzzword Counter",
+    description: "Track and analyze buzzwords in presentations and lectures",
+    url: "https://buzzword-counter.vercel.app/",
+    siteName: "Buzzword Counter",
+    images: [
+      {
+        url: "/images/thumbnail.jpeg", // your thumbnail image
+        width: 1200,
+        height: 630,
+        alt: "Buzzword Counter Thumbnail",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Buzzword Counter",
+    description: "Track and analyze buzzwords in presentations and lectures",
+    images: ["/images/thumbnail.jpeg"],
+  },
 }
 
 export default function RootLayout({
