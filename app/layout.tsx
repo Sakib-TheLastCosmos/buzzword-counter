@@ -20,7 +20,6 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: "Buzzword Counter",
   description: "Track and analyze buzzwords in presentations and lectures",
-    generator: 'v0.app'
 }
 
 export default function RootLayout({
