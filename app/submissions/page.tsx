@@ -83,7 +83,7 @@ export default async function SubmissionsPage() {
 
                   {submission.status === "approved" && (
                     <Button asChild className="w-full">
-                      <Link href={`/sessions/${submission.session_id}/analytics`}>
+                      <Link href={`/sessions/${submission.session_id}/analytics`} prefetch={true}>
                         <BarChart3 className="h-4 w-4 mr-2" />
                         View Analytics
                       </Link>

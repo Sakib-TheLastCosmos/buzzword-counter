@@ -126,7 +126,7 @@ export default async function HomePage() {
                   </CardHeader>
                   <CardContent className="text-center">
                     <Button asChild className="w-full">
-                      <Link href={`/teachers/${teacher.id}`}>View Profile</Link>
+                      <Link href={`/teachers/${teacher.id}`} prefetch={true}>View Profile</Link>
                     </Button>
                   </CardContent>
                 </Card>

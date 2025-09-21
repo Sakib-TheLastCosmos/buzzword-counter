@@ -13,6 +13,7 @@ import {
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import Link from "next/link";
+import { DarkModeToggleButton } from "../ui/dark-mode-toggle";
 
 interface UserMenuProps {
   user: User;
@@ -78,20 +79,20 @@ export function UserMenu({ user }: UserMenuProps) {
 
     {/* Menu Links */}
     <DropdownMenuItem asChild>
-      <Link href="/profile" legacyBehavior>
+      <Link href="/profile" legacyBehavior prefetch={true}>
         <a className="w-full block px-3 py-2 rounded hover:bg-gray-100 transition">Profile</a>
       </Link>
     </DropdownMenuItem>
 
     <DropdownMenuItem asChild>
-      <Link href="/submissions" legacyBehavior>
+      <Link href="/submissions" legacyBehavior prefetch={true}>
         <a className="w-full block px-3 py-2 rounded hover:bg-gray-100 transition">My Submissions</a>
       </Link>
     </DropdownMenuItem>
 
     {user.role === "admin" && (
       <DropdownMenuItem asChild>
-        <Link href="/admin" legacyBehavior>
+        <Link href="/admin" legacyBehavior prefetch={true}>
           <a className="w-full block px-3 py-2 rounded hover:bg-gray-100 transition">Admin Dashboard</a>
         </Link>
       </DropdownMenuItem>

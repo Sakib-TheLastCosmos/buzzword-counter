@@ -7,12 +7,15 @@ import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Calendar, Play, BarChart3, Users, Clock } from "lucide-react"
+import { useLoader } from "@/app/context/LoaderContext"
 
 interface SessionPageProps {
   params: { id: string }
 }
 
 export default async function SessionPage({ params }: SessionPageProps) {
+
+
   const { id } = params
   const supabase = await createClient()
   const user = await getCurrentUser()
@@ -32,7 +35,8 @@ export default async function SessionPage({ params }: SessionPageProps) {
     .select("*")
     .eq("teacher_id", session.teacher_id)   // or some other linking column
 
-      session.buzzwords = buzzwords;  // attach buzzwords to session object
+  session.buzzwords = buzzwords;  // attach buzzwords to session object
+
 
   if (!session) {
     notFound()
@@ -122,7 +126,7 @@ export default async function SessionPage({ params }: SessionPageProps) {
           )}
           {aggregates && (
             <Button size="lg" variant="outline" asChild>
-              <Link href={`/sessions/${session.id}/analytics`}>
+              <Link href={`/sessions/${session.id}/analytics`} prefetch={true}>
                 <BarChart3 className="h-5 w-5 mr-2" />
                 View Analytics
               </Link>

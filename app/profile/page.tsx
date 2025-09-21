@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { InfoIcon } from "lucide-react"
+import { DarkModeToggleButton } from "@/components/ui/dark-mode-toggle"
 
 interface ProfilePageProps {
   searchParams: Promise<{ message?: string }>
@@ -86,6 +87,11 @@ export default async function ProfilePage({ searchParams }: ProfilePageProps) {
                   day: "numeric",
                 })}
               </p>
+            </div>
+
+            <div>
+              <span>Mode</span>
+              <DarkModeToggleButton />
             </div>
 
             {!user.approved && user.role !== "admin" && (
